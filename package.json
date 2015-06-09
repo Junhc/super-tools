@@ -1,0 +1,25 @@
+{
+  "name": "super-tools",
+  "version": "1.0.0",
+  "description": "打造一款专属超级工具.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "dependencies":{
+    "express":"4.12.4"
+  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junhc/super-tools.git"
+  },
+  "keywords": [
+    "tools"
+  ],
+  "author": "K.K",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/Junhc/super-tools/issues"
+  },
+  "homepage": "https://github.com/Junhc/super-tools#readme"
+}
