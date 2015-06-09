@@ -6,9 +6,9 @@
   "scripts": {
     "test": "test"
   },
-  "dependencies":{
+  "dependencies": {
     "express":"4.12.4"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Junhc/super-tools.git"
