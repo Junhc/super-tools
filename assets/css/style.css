@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+#logo .express span {
+  color: rgba(175, 47, 47, 0.15);
+}
+
 #logo .description {
   position: relative;
   top: -5px;
