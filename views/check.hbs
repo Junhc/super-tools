@@ -16,9 +16,21 @@
         </tbody>
 	<tbody>
 	  <tr>
-	    <td colspan="4"><span class="btn"><i class="icon-plus"></i> 添加规则</span></td>
+	    <td colspan="4"><span id="add" class="btn"><i class="icon-plus"></i> 添加规则</span></td>
 	  </tr>
       	</tbody>
    </table>
 </div>
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    $('#add').click(function(){
+        socket.emit('message', '{"msg":"Hello Node!"}');
+        return false;
+    });
+    
+    socket.on('message', function(data){
+   	alert(data);
+    });
+</script>
