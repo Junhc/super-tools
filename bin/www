@@ -20,7 +20,7 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
+var io = require('socket.io')(server);
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -29,6 +29,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+io.on('connection', onConnecting);
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -87,4 +88,11 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+}
+
+function onConnecting(socket) {
+  // 监听message通道
+  socket.on('message', function(data){
+    console.log(data);
+  });
 }

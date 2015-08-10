@@ -22,8 +22,10 @@
    </table>
 </div>
 </div>
-<script src="/socket.io/socket.io.js"></script>
-<script>
+{{#extend "footer"}}
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    {{{block "fooer"}}}	
+<script type="text/javascript">
     var socket = io();
     $('#add').click(function(){
         socket.emit('message', '{"msg":"Hello Node!"}');
@@ -34,3 +36,4 @@
    	alert(data);
     });
 </script>
+{{/extend}}

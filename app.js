@@ -1,4 +1,5 @@
 var express = require('express');
+var hbs = require('hbs');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -58,5 +59,23 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// hbs扩展
+var blocks = {};
+
+hbs.registerHelper('extend', function(name,context) {
+  var block = blocks[name];
+  if(!block) {
+    block = blocks[name] = [];
+  }
+
+  block.push(context.fn(this));
+});
+
+hbs.registerHelper('block', function(name) {
+  var val = (blocks[name] || []).join('\n');
+
+  blocks[name] = [];
+  return val;
+});
 
 module.exports = app;
